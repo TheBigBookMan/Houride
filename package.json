@@ -1,0 +1,22 @@
+{
+  "name": "houride",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheBigBookMan/Houride.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheBigBookMan/Houride/issues"
+  },
+  "homepage": "https://github.com/TheBigBookMan/Houride#readme",
+  "dependencies": {
+    "react-icons": "^4.6.0"
+  }
+}
