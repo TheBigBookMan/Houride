@@ -2,7 +2,7 @@ import { eventData } from "../../utils/eventdata";
 
 // TODO import react router paths
 
-//TODO when user logged in then get rid of login and signup
+//TODO when user logged in then get rid of login and signup and Hourde logo
 //TODO when user logged in then have
 //? Explore(to home page)
 //? wishlist(save rides for later as favourites)

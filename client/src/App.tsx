@@ -11,6 +11,7 @@ import Footer from "./components/common/Footer";
 // * JWT authorization WITH cookies---- figure out the cookies/Vite combo
 
 //TODO need to import react router so can link to other pages
+//TODO index the home page as we want that to be first on open
 
 function App() {
   return (
