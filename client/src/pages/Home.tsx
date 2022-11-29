@@ -2,7 +2,6 @@ import Events from "../components/features/home/Events";
 import Listings from "../components/features/home/Listings";
 import Filter from "../components/features/home/Filter";
 import Extras from "../components/features/home/Extras";
-import Footer from "../components/common/Footer";
 
 const Home = () => {
   return (
@@ -11,7 +10,6 @@ const Home = () => {
       <Filter />
       <Listings />
       <Extras />
-      <Footer />
     </div>
   );
 };
