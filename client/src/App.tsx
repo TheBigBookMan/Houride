@@ -4,6 +4,7 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import ProfileSelect from "./pages/ProfileSelect";
 import CarRental from "./pages/CarRental";
+import CarListings from "./pages/CarListings";
 import Footer from "./components/common/Footer";
 
 // * use graphQL/Apollo
@@ -22,7 +23,8 @@ function App() {
       {/* <Signup /> */}
       {/* <Login /> */}
       {/* <ProfileSelect /> */}
-      <CarRental />
+      {/* <CarRental /> */}
+      <CarListings />
       <Footer />
     </div>
   );
