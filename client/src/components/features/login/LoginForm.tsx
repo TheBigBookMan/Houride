@@ -9,7 +9,7 @@ interface LoginInput {
 }
 
 const LoginForm = () => {
-  let isValid = true;
+  let isValid;
   const [formDetails, setFormDetails] = useState<LoginInput>({
     email: "",
     password: "",
@@ -27,8 +27,7 @@ const LoginForm = () => {
       e.preventDefault();
 
       if (formDetails.email === "" || formDetails.password === "") {
-        isValid = false;
-        throw "Need all areas to be filled out.";
+        isValid = "Need all areas to be filled out.";
       }
       console.log(formDetails);
     } catch (err) {
@@ -63,11 +62,11 @@ const LoginForm = () => {
       <button
         onClick={onSubmit}
         type="submit"
-        className="border-2 rounded-xl p-2 w-[100px] bg-zinc-100 hover:bg-zinc-200 active:bg-zinc-300 transition-all"
+        className="border-2 rounded-xl p-2 w-[100px] bg-zinc-100 hover:bg-zinc-200 active:bg-zinc-300 transition-all "
       >
         Submit
       </button>
-      {!isValid && <p>Need to have all areas filled out.</p>}
+      {isValid && <div>{isValid}</div>}
     </form>
   );
 };
