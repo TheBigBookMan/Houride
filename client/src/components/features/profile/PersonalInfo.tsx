@@ -8,7 +8,10 @@ const PersonalInfo = () => {
       <h1 className="font-bold text-lg">Personal info</h1>
       <ul className="flex flex-col">
         {listPersonalInfo.map((item) => (
-          <li className="flex justify-between border-b-2 py-5 group hover:cursor-pointer hover:bg-zinc-100">
+          <li
+            key={item.title}
+            className="flex justify-between border-b-2 py-5 group hover:cursor-pointer hover:bg-zinc-100"
+          >
             <div className="flex flex-col">
               <h1>{item.title}</h1>
               <p className="text-sm text-zinc-400">{item.subTitle}</p>

@@ -1,6 +1,7 @@
 import car from "../styles/car.jpg";
 import ProfileInfo from "../components/features/profile/ProfileInfo";
 import PersonalInfo from "../components/features/profile/PersonalInfo";
+import Settings from "../components/features/profile/Settings";
 import { listItems } from "../components/features/profile/listitems";
 
 //? this will be a page of its own but add a link to it
@@ -21,7 +22,7 @@ const ProfileSelect = () => {
   return (
     <div className="w-full">
       <h1 className="font-bold text-2xl text-center mt-2">Profile</h1>
-      <PersonalInfo />
+      <Settings />
       {/* <ul className="flex flex-col gap-5 p-2 w-full">
         <li className="h-[80px] p-2 flex items-center gap-3 group hover:bg-zinc-200 hover:cursor-pointer rounded-2xl transition-all border-b-2">
           <img src={car} className="w-16 h-16 rounded-2xl" />

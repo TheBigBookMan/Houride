@@ -9,7 +9,7 @@ import car from "../../../styles/car.jpg";
 
 const ProfileInfo = () => {
   return (
-    <div className="flex flex-col p-3 gap-5">
+    <div className="flex flex-col p-5 gap-5">
       <div className="flex justify-between">
         <div className="flex flex-col">
           <h1 className="font-bold">Hi, I'm Ben</h1>

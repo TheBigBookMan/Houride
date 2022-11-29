@@ -6,12 +6,12 @@ export const listItems = [
   },
   {
     icon: "icon",
-    title: "Settings",
+    title: "Account settings",
     bio: "",
   },
   {
     icon: "icon",
-    title: "Car Rental",
+    title: "Car rental",
     bio: "Lend out a car for hire",
   },
   {
@@ -21,7 +21,7 @@ export const listItems = [
   },
   {
     icon: "icon",
-    title: "Change Details",
+    title: "Change details",
     bio: "Language, currency and location",
   },
 ];
