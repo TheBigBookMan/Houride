@@ -3,16 +3,14 @@ import { useState, useEffect } from "react";
 //TODO add in mutations for the signup from graphql
 //TODO add in JWT authentication
 
-interface FormInput {
-  username: string;
+interface LoginInput {
   email: string;
   password: string;
 }
 
-const Form = () => {
+const LoginForm = () => {
   let isValid = true;
-  const [formDetails, setFormDetails] = useState<FormInput>({
-    username: "",
+  const [formDetails, setFormDetails] = useState<LoginInput>({
     email: "",
     password: "",
   });
@@ -28,11 +26,7 @@ const Form = () => {
     try {
       e.preventDefault();
 
-      if (
-        formDetails.username === "" ||
-        formDetails.email === "" ||
-        formDetails.password === ""
-      ) {
+      if (formDetails.email === "" || formDetails.password === "") {
         isValid = false;
         throw "Need all areas to be filled out.";
       }
@@ -44,17 +38,6 @@ const Form = () => {
 
   return (
     <form className="p-2 flex flex-col gap-5">
-      <label className="font-bold flex flex-col">
-        Username
-        <input
-          name="username"
-          value={formDetails.username}
-          onChange={inputChange}
-          type="text"
-          placeholder="Enter here..."
-          className="border-2 rounded-lg pl-2"
-        />
-      </label>
       <label className="font-bold flex flex-col">
         Email
         <input
@@ -89,4 +72,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default LoginForm;
