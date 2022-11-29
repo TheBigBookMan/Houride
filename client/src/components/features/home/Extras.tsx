@@ -22,6 +22,16 @@ const Extras = () => {
           neque ex reprehenderit necessitatibus ratione odio aliquid.
         </p>
       </div>
+      <div>
+        <h1 className="font-bold text-2xl text-center">Andrew Kyriakou</h1>
+        <p>
+          Imagine being a driver for the big man ANdrew Kyriakou, the endless
+          amount of possibilities just open up so much if you work for ANdrew
+          Kyriakou. Imagine also investing in a company that is owned by Adrew
+          Ktriakou, pHEWWWW get on it fam or sign up to hire a car and Andrew
+          Kyriakou will drive it personally for you
+        </p>
+      </div>
     </div>
   );
 };
