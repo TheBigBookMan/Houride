@@ -1,5 +1,8 @@
 import LoginForm from "../components/features/login/LoginForm";
 
+//TODO import react router
+// TODO Add link to the signup to redirect to signup page
+
 const Login = () => {
   return (
     <div className="p-2 flex flex-col gap-2">
