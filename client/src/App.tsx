@@ -2,6 +2,7 @@ import Home from "./pages/Home";
 import NavBar from "./components/common/NavBar";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import ProfileSelect from "./pages/ProfileSelect";
 import Footer from "./components/common/Footer";
 
 // * use graphQL/Apollo
@@ -17,7 +18,8 @@ function App() {
       <NavBar />
       {/* <Home /> */}
       {/* <Signup /> */}
-      <Login />
+      {/* <Login /> */}
+      <ProfileSelect />
       <Footer />
     </div>
   );
