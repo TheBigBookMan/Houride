@@ -22,8 +22,7 @@ const ProfileSelect = () => {
   return (
     <div className="w-full">
       <h1 className="font-bold text-2xl text-center mt-2">Profile</h1>
-      <Settings />
-      {/* <ul className="flex flex-col gap-5 p-2 w-full">
+      <ul className="flex flex-col gap-5 p-2 w-full">
         <li className="h-[80px] p-2 flex items-center gap-3 group hover:bg-zinc-200 hover:cursor-pointer rounded-2xl transition-all border-b-2">
           <img src={car} className="w-16 h-16 rounded-2xl" />
           <div className="flex justify-between w-full">
@@ -55,7 +54,7 @@ const ProfileSelect = () => {
         className="ml-2 border-2 rounded-xl w-[150px] mt-1 p-1 bg-indigo-200 hover:bg-indigo-300 active:bg-indigo-400 transition-all"
       >
         Logout
-      </button> */}
+      </button>
     </div>
   );
 };
