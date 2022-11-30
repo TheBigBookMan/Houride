@@ -5,6 +5,9 @@ const { gql } = require("apollo-server-express");
 
 //TODO might need to implement the date scalar--- will be important how Prisma does the date
 
+//TODO figure out how to do registration etc
+//TODO license could be photo
+
 const queries = gql`
   type Car {
     _id: ID
@@ -13,8 +16,10 @@ const queries = gql`
     events: [Event]
     seats: Int
     driver: User
+    license: String
     price: Int
     location: String
+    registration: String
     availability: [String]
     drivingHistory: [Transaction]
     radiusDrive 
@@ -67,6 +72,7 @@ const queries = gql`
     identityVerified: Boolean
     reviewsGiven: [Review]
     reviewsReceived: [Review]
+    carsForRent: [Car]
     favourites: [Car]
   }
 
