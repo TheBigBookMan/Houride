@@ -8,6 +8,8 @@ const mutations = gql`
     login(email: String!, password: String!): Auth
     logout: Boolean
 
+    editInfo(bio: String, location: String, languages: [String]): User
+
     addCar(
       type: String!
       images: [String]
@@ -20,7 +22,26 @@ const mutations = gql`
       registration: String!
       availability: [String!]
     ): Car
-    removeCar(CarId: ID!): User
+    removeCar(carId: ID!): User
+
+    addReview(
+      creatingReview: ID!
+      beingReviewed: ID!
+      rating: Int!
+      comment: String
+    ): Review
+    removeReview(reviewId: ID!): User
+
+    createTransaction(
+      event: String!
+      customer: ID!
+      driver: ID!
+      payment: Int!
+      distance: Int!
+      time: Int!
+      review: String
+      location: String!
+    ): Transaction
   }
 `;
 
