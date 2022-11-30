@@ -9,7 +9,8 @@ const Filter = () => {
         <option value="Highest Price">Highest Price</option>
         <option value="Event Alphabetical">Event Alphabetical</option>
         <option value="Event Reverse Alpha">Event Reverse Alpha</option>
-        <option value="Number seats">Number seats</option>
+        <option value="Number seats ascending">Number seats ascending</option>
+        <option value="Number seats descending">Number seats descending</option>
       </select>
     </form>
   );

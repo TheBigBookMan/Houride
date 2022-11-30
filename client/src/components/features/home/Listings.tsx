@@ -2,6 +2,8 @@ import car from "../../../styles/car.jpg";
 import { AiFillStar } from "react-icons/ai";
 import { fakeListingData } from "../../../utils/fakeListingData";
 
+//TODO add in for each list item maybe a location as well
+
 const Listings = () => {
   return (
     <div>
