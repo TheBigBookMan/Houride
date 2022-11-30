@@ -6,4 +6,5 @@ export const eventData = [
   "Birthday",
   "Hens/Bucks",
   "Funeral",
+  "Cruise",
 ];
