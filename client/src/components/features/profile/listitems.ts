@@ -11,6 +11,11 @@ export const listItems = [
   },
   {
     icon: "icon",
+    title: "Transaction history",
+    bio: "View all your transactions",
+  },
+  {
+    icon: "icon",
     title: "Car rental",
     bio: "Lend out a car for hire",
   },
