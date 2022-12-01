@@ -7,9 +7,12 @@ import { fakeListingData } from "../../../utils/fakeListingData";
 const Listings = () => {
   return (
     <div>
-      <ul className="flex flex-wrap p-2 gap-5 h-[600px] overflow-y-scroll justify-center">
+      <ul className="flex flex-wrap p-2 gap-1 h-[600px] overflow-y-scroll justify-center">
         {fakeListingData.map((data, index) => (
-          <li className="flex flex-col" key={data.user + index}>
+          <li
+            className="flex flex-col hover:bg-indigo-100 rounded-2xl hover:cursor-pointer transition-all p-4"
+            key={data.user + index}
+          >
             <img className="w-72 rounded-2xl" src={car} />
             <div className="flex flex-row justify-between">
               <h1 className="font-bold">{data.car}</h1>

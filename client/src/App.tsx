@@ -5,11 +5,15 @@ import Login from "./pages/Login";
 import ProfileSelect from "./pages/ProfileSelect";
 import CarRental from "./pages/CarRental";
 import CarListings from "./pages/CarListings";
+import Inbox from "./pages/Inbox";
+import Wishlist from "./pages/Wishlist";
+import Bookings from "./pages/Bookings";
 import Footer from "./components/common/Footer";
+import { Link, Routes, Route } from "react-router-dom";
 
 // * use graphQL/Apollo
 //* SQL database PostGres
-//* prisma
+//* prismag
 // * JWT authorization WITH cookies---- figure out the cookies/Vite combo
 
 //TODO need to import react router so can link to other pages
@@ -19,12 +23,17 @@ function App() {
   return (
     <div>
       <NavBar />
-      {/* <Home /> */}
-      {/* <Signup /> */}
-      {/* <Login /> */}
-      {/* <ProfileSelect /> */}
-      {/* <CarRental /> */}
-      <CarListings />
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/profile" element={<ProfileSelect />} />
+        <Route path="/rental" element={<CarRental />} />
+        <Route path="/listings" element={<CarListings />} />
+        <Route path="/inbox" element={<Inbox />} />
+        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/bookings" element={<Bookings />} />
+      </Routes>
       <Footer />
     </div>
   );
