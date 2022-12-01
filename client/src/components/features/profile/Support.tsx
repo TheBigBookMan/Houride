@@ -4,3 +4,13 @@
 //? - contact info for the help line
 
 //! mae those three minor components with links
+
+const Support = () => {
+  return (
+    <div>
+      <h1>Support</h1>
+    </div>
+  );
+};
+
+export default Support;

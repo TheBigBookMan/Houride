@@ -2,7 +2,7 @@ import Home from "./pages/Home";
 import NavBar from "./components/common/NavBar";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
-import ProfileSelect from "./pages/ProfileSelect";
+import Profile from "./pages/Profile";
 import CarRental from "./pages/CarRental";
 import CarListings from "./pages/CarListings";
 import Inbox from "./pages/Inbox";
@@ -27,7 +27,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/profile" element={<ProfileSelect />} />
+        <Route path="/profile/*" element={<Profile />} />
         <Route path="/rental" element={<CarRental />} />
         <Route path="/listings" element={<CarListings />} />
         <Route path="/inbox" element={<Inbox />} />

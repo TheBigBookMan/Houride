@@ -1,29 +1,18 @@
-import car from "../styles/car.jpg";
-import ProfileInfo from "../components/features/profile/ProfileInfo";
-import PersonalInfo from "../components/features/profile/PersonalInfo";
-import Settings from "../components/features/profile/Settings";
-import { listItems } from "../components/features/profile/listitems";
+import car from "../../../styles/car.jpg";
+import { listItems } from "./listitems";
+import { Link } from "react-router-dom";
 
-//? this will be a page of its own but add a link to it
-//! car rental - page to set up hiring out your car (car info, car images, specific events, reviews, rating, dates free, email user, message user on app, price, any comments, potential map of radius user willing to do)
-
-//! Change language/change currency
-
-//! logout button
-
-//TODO import react router for path links to the components
-
-//TODO make each list item group hover and group active click to the link
-//TODO might need to add into the hardcode array listitems the path component, cant remember if thats here or other spot
-
-//TODO import icons for each section
+//! fix the listItem map any types, doesnt work for the 'to' prop in link
 
 const ProfileSelect = () => {
   return (
     <div className="w-full">
-      <h1 className="font-bold text-2xl text-center mt-2">Profile</h1>
       <ul className="flex flex-col gap-5 p-2 w-full">
-        <li className="h-[80px] p-2 flex items-center gap-3 group hover:bg-zinc-200 hover:cursor-pointer rounded-2xl transition-all border-b-2">
+        <Link
+          to="/profile/profile-info"
+          key="showProfile"
+          className="h-[80px] p-2 flex items-center gap-3 group hover:bg-zinc-200 hover:cursor-pointer rounded-2xl transition-all border-b-2"
+        >
           <img src={car} className="w-16 h-16 rounded-2xl" />
           <div className="flex justify-between w-full">
             <div className="flex flex-col">
@@ -32,9 +21,10 @@ const ProfileSelect = () => {
             </div>
             <p className="text-2xl">{">"}</p>
           </div>
-        </li>
-        {listItems.map((item) => (
-          <li
+        </Link>
+        {listItems.map((item: any) => (
+          <Link
+            to={item.pathTo}
             className="h-[50px] flex justify-between items-center group hover:bg-zinc-200 hover:cursor-pointer rounded-2xl transition-all p-2"
             key={item.title}
           >
@@ -46,7 +36,7 @@ const ProfileSelect = () => {
               </div>
             </div>
             <p className="text-2xl">{">"}</p>
-          </li>
+          </Link>
         ))}
       </ul>
       <button
