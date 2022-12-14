@@ -2,8 +2,8 @@
 
 const Bookings = () => {
   return (
-    <div>
-      <h1>Bookings</h1>
+    <div className="h-full w-full">
+      <h1 className="font-bold text-2xl text-center mt-2">Bookings</h1>
     </div>
   );
 };
