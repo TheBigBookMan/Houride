@@ -9,6 +9,7 @@ import Inbox from "./pages/Inbox";
 import Wishlist from "./pages/Wishlist";
 import Bookings from "./pages/Bookings";
 import Transaction from "./pages/Transaction";
+import TransactionHistory from "./pages/TransactionHistory";
 import Footer from "./components/common/Footer";
 import { Link, Routes, Route } from "react-router-dom";
 
@@ -41,6 +42,7 @@ function App() {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/bookings" element={<Bookings />} />
         <Route path="/transaction" element={<Transaction />} />
+        <Route path="/transaction-history" element={<TransactionHistory />} />
       </Routes>
       <Footer />
     </div>

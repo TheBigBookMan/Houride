@@ -50,6 +50,7 @@ const FutureTransactions = () => {
             <div className="flex flex-col">
               <p>Date- {booking.date}</p>
               <p>Time- {booking.time}</p>
+              <p className="underline hover:cursor-pointer">view transaction</p>
             </div>
           </li>
         ))}

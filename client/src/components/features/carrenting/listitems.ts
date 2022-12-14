@@ -15,7 +15,7 @@ export const listItems = [
     icon: "icon",
     title: "Transaction history",
     bio: "View all your transactions",
-    pathTo: "/bookings",
+    pathTo: "/transaction-history",
   },
   {
     icon: "icon",

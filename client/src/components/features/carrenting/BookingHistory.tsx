@@ -15,8 +15,8 @@ const BookingHistory = () => {
 
   return (
     <div className="w-full h-full p-4 flex flex-col gap-2">
+      <h1 className="font-bold text-lg">Booking History</h1>
       <div className="flex justify-between">
-        <h1 className="font-bold text-lg">Booking History</h1>
         <div className="flex gap-2">
           <button
             onClick={(): void => setIsFuture(true)}
