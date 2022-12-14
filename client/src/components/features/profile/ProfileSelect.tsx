@@ -39,12 +39,14 @@ const ProfileSelect = () => {
           </Link>
         ))}
       </ul>
-      <button
-        type="submit"
-        className="ml-2 border-2 rounded-xl w-[150px] mt-1 p-1 bg-indigo-200 hover:bg-indigo-300 active:bg-indigo-400 transition-all"
-      >
-        Logout
-      </button>
+      <Link to="/">
+        <button
+          type="submit"
+          className="ml-2 border-2 rounded-xl w-[150px] mt-1 p-1 bg-indigo-200 hover:bg-indigo-300 active:bg-indigo-400 transition-all"
+        >
+          Logout
+        </button>
+      </Link>
     </div>
   );
 };

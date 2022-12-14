@@ -15,9 +15,15 @@ import { Link, Routes, Route } from "react-router-dom";
 //* SQL database PostGres
 //* prismag
 // * JWT authorization WITH cookies---- figure out the cookies/Vite combo
+//* Could use SupaBase for authentication etc
+//* GraphQL subscriptions are for the instant chatting it seems and maybe the instant requesting etc
 
 //TODO need to import react router so can link to other pages
 //TODO index the home page as we want that to be first on open
+
+//TODO have the "register car" in the navbar somewhere
+
+//TODO car page with all the information about the car rental etc with contact info and a way for the user to message the car rental person
 
 function App() {
   return (

@@ -39,6 +39,9 @@ const NavBar = () => {
           <Link className="hover:text-zinc-400" to="/profile">
             Profile
           </Link>
+          <Link className="hover:text-zinc-400" to="/rental">
+            Rent Your Car
+          </Link>
           <Link className="hover:text-zinc-400" to="/">
             Logout
           </Link>
