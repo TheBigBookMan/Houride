@@ -3,5 +3,6 @@ const Customer = require("./Customer");
 const Event = require("./Event");
 const User = require("./User");
 const Transaction = require("./Transaction");
+const Badge = require("./Badge");
 
-module.exports = { Car, Customer, Event, User, Transaction };
+module.exports = { Badge, Car, Customer, Event, User, Transaction };
