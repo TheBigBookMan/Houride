@@ -40,7 +40,7 @@ const NavBar = () => {
             Profile
           </Link>
           <Link className="hover:text-zinc-400" to="/rental">
-            Rent Your Car
+            Car Renting
           </Link>
           <Link className="hover:text-zinc-400" to="/">
             Logout

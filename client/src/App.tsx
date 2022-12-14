@@ -3,11 +3,12 @@ import NavBar from "./components/common/NavBar";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
-import CarRental from "./pages/CarRental";
+import CarRenting from "./pages/CarRenting";
 import CarListings from "./pages/CarListings";
 import Inbox from "./pages/Inbox";
 import Wishlist from "./pages/Wishlist";
 import Bookings from "./pages/Bookings";
+import Transaction from "./pages/Transaction";
 import Footer from "./components/common/Footer";
 import { Link, Routes, Route } from "react-router-dom";
 
@@ -34,11 +35,12 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/profile/*" element={<Profile />} />
-        <Route path="/rental" element={<CarRental />} />
+        <Route path="/rental/*" element={<CarRenting />} />
         <Route path="/listings" element={<CarListings />} />
         <Route path="/inbox" element={<Inbox />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/bookings" element={<Bookings />} />
+        <Route path="/transaction" element={<Transaction />} />
       </Routes>
       <Footer />
     </div>
