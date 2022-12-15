@@ -48,8 +48,8 @@ const hardcode = [
 const Sent = () => {
   return (
     <>
-      {hardcode.map((info) => (
-        <li className="border-b-2 h-[100px] flex pl-1 p-2 gap-1">
+      {hardcode.map((info, idx) => (
+        <li key={idx} className="border-b-2 h-[100px] flex pl-1 p-2 gap-1">
           <div className="flex flex-col w-full">
             <img src={car} className="h-16" />
             <h1 className="text-xs font-bold">{info.name}</h1>

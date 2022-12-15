@@ -72,7 +72,10 @@ const Listings = () => {
       <Filter setFilterChoice={setFilterChoice} />
       <ul className="flex flex-col flex-wrap p-2 gap-5 justify-center">
         {fakeListingData.map((data, index) => (
-          <li className="flex flex-col" key={data.user + index}>
+          <li
+            className="flex flex-col hover:bg-indigo-100 hover:cursor-pointer transition-all p-4 rounded-2xl"
+            key={data.user + index}
+          >
             <img className="w-72 rounded-2xl" src={car} />
             <div className="flex flex-row justify-between">
               <h1 className="font-bold">{data.car}</h1>
