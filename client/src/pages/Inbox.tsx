@@ -1,70 +1,35 @@
-import car from "../styles/car.jpg";
-
-const hardcode = [
-  {
-    name: "Ben Smerd",
-    date: "02/11/2020",
-    message:
-      "that is the Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elit",
-  },
-  {
-    name: "Ben Smerd",
-    date: "02/11/2020",
-    message:
-      "that is the Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elit",
-  },
-  {
-    name: "Ben Smerd",
-    date: "02/11/2020",
-    message:
-      "that is the Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elit",
-  },
-  {
-    name: "Ben Smerd",
-    date: "02/11/2020",
-    message:
-      "that is the Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elit",
-  },
-  {
-    name: "Ben Smerd",
-    date: "02/11/2020",
-    message:
-      "that is the Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elit",
-  },
-  {
-    name: "Ben Smerd",
-    date: "02/11/2020",
-    message:
-      "that is the Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elit",
-  },
-  {
-    name: "Ben Smerd",
-    date: "02/11/2020",
-    message:
-      "that is the Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elitLorem ipsum dolor sit amet consectetur adipisicing elit",
-  },
-];
+import Sent from "../components/features/inbox/Sent";
+import Received from "../components/features/inbox/Received";
+import { useState } from "react";
 
 const Inbox = () => {
+  const [isSent, setIsSent] = useState<boolean>(false);
+
   return (
     <div>
       <h1 className="font-bold text-2xl text-center mt-2">Inbox</h1>
       <div className="h-full w-full">
+        <div className="flex justify-center gap-2">
+          <button
+            onClick={(): void => setIsSent(false)}
+            className={`${
+              !isSent ? "bg-indigo-300" : "bg-zinc-100"
+            } text-sm border-2 rounded-xl p-2 w-[150px]  hover:bg-indigo-300 active:bg-indigo-400 transition-all`}
+          >
+            Received Messages
+          </button>
+          <button
+            onClick={(): void => setIsSent(true)}
+            className={`${
+              isSent ? "bg-indigo-300" : "bg-zinc-100"
+            } text-sm border-2 rounded-xl p-2 w-[150px] hover:bg-indigo-300 active:bg-indigo-400 transition-all`}
+          >
+            Sent Messages
+          </button>
+        </div>
+
         <ul className="flex flex-col gap-1 p-2">
-          {hardcode.map((info) => (
-            <li className="border-solid border-2 border-black h-[100px] flex pl-1 gap-1">
-              <div className="flex flex-col w-full">
-                <img src={car} className="h-16" />
-                <h1 className="text-xs font-bold">{info.name}</h1>
-              </div>
-              <div className="flex flex-col">
-                <p className="text-xs text-gray-400">
-                  Message sent- {info.date}
-                </p>
-                <p className="text-xs overflow-x-auto">{info.message}</p>
-              </div>
-            </li>
-          ))}
+          {isSent ? <Sent /> : <Received />}
         </ul>
       </div>
     </div>
