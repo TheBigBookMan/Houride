@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 //! fix the listItem map any types, doesnt work for the 'to' prop in link
 
 const ProfileSelect = () => {
-  const renderItems = () => {};
-
   return (
     <div className="w-full">
       <ul className="flex flex-col gap-5 p-2 w-full">
