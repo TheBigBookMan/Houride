@@ -71,7 +71,7 @@ const TransactionHistory = () => {
             <th>Amount</th>
           </tr>
           {hardcode.map((transaction) => (
-            <tr className="h-[100px] flex flex-row justify-between border-b border-b-2 text-sm gap-2">
+            <tr className="p-2 h-[100px] flex flex-row justify-between border-b border-b-2 text-sm gap-2 hover:bg-indigo-200 hover:cursor-pointer transition-all">
               <td>{transaction.date}</td>
               <td>{transaction.type}</td>
               <td>
