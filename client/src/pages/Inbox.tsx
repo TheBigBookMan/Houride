@@ -28,7 +28,7 @@ const Inbox = () => {
           </button>
         </div>
 
-        <ul className="flex flex-col gap-1 p-2">
+        <ul className="flex flex-col gap-1 p-2 overflow-y-auto h-screen">
           {isSent ? <Sent /> : <Received />}
         </ul>
       </div>

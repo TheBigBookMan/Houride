@@ -41,7 +41,7 @@ const PastTransactions = () => {
     <div>
       <ul className="flex flex-col gap-2 h-full w-full">
         {bookingcode.map((booking) => (
-          <li className="border-solid border-2 border-black h-[80px] flex justify-between">
+          <li className="border-b border-b-2 h-[80px] flex justify-between hover:cursor-pointer hover:bg-indigo-100 rounded-lg p-1">
             <div className="flex flex-col">
               <h1 className="font-bold">{booking.name}</h1>
               <p>Event- {booking.event}</p>
