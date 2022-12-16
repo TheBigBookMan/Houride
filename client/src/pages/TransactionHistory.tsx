@@ -62,8 +62,8 @@ const TransactionHistory = () => {
       <h1 className="font-bold text-2xl text-center mt-2">
         Transaction History
       </h1>
-      <div className="w-full h-full">
-        <table className="w-full ">
+      <div className="w-full h-full p-2">
+        <table className="w-full">
           <tr className="flex flex-row justify-between border-b border-b-2">
             <th>Date</th>
             <th>Type</th>
@@ -71,7 +71,7 @@ const TransactionHistory = () => {
             <th>Amount</th>
           </tr>
           {hardcode.map((transaction) => (
-            <tr className="p-2 h-[100px] flex flex-row justify-between border-b border-b-2 text-sm gap-2 hover:bg-indigo-200 hover:cursor-pointer transition-all">
+            <tr className="p-2 h-[100px] flex flex-row justify-between border-b border-b-2 text-sm gap-2 hover:bg-indigo-200 hover:cursor-pointer rounded-lg transition-all">
               <td>{transaction.date}</td>
               <td>{transaction.type}</td>
               <td>

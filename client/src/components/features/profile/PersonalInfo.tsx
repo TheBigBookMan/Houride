@@ -10,7 +10,7 @@ const PersonalInfo = () => {
         {listPersonalInfo.map((item) => (
           <li
             key={item.title}
-            className="flex justify-between border-b-2 py-5 group hover:cursor-pointer hover:bg-zinc-100"
+            className="flex justify-between items-center border-b-2 py-5 group hover:cursor-pointer hover:bg-indigo-100 rounded-lg p-2 pr-4"
           >
             <div className="flex flex-col">
               <h1>{item.title}</h1>
