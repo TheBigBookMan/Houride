@@ -10,12 +10,12 @@ import { useState } from "react";
 
 //TODO have 2 sepeerate pages- future transactions, completed transactions
 
-const BookingHistory = () => {
+const RentingHistory = () => {
   const [isFuture, setIsFuture] = useState<boolean>(true);
 
   return (
     <div className="w-full h-full p-4 flex flex-col gap-2">
-      <h1 className="font-bold text-lg">Booking History</h1>
+      <h1 className="font-bold text-lg">Renting History</h1>
       <div className="flex justify-between">
         <div className="flex gap-2">
           <button
@@ -41,4 +41,4 @@ const BookingHistory = () => {
   );
 };
 
-export default BookingHistory;
+export default RentingHistory;

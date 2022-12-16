@@ -21,10 +21,10 @@ const reviews = [
   },
 ];
 
-const BookingsInfo = () => {
+const RentingInfo = () => {
   return (
     <div className="h-full w-full p-5 flex flex-col">
-      <h1 className="font-bold text-lg">Booking Statistics</h1>
+      <h1 className="font-bold text-lg">Renting Statistics</h1>
       <ul className="flex flex-col gap-2">
         <li>
           <h1 className="font-bold">Earnings</h1>
@@ -54,4 +54,4 @@ const BookingsInfo = () => {
   );
 };
 
-export default BookingsInfo;
+export default RentingInfo;

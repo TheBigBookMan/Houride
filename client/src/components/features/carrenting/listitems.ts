@@ -15,14 +15,14 @@ export const ReactIcons = [
 
 export const listItems = [
   {
-    title: "Bookings Information",
+    title: "Renting Information",
     bio: "Revenue, reviews, ratings",
-    pathTo: "/rental/bookings-info",
+    pathTo: "/rental/renting-info",
   },
   {
-    title: "Bookings",
+    title: "Rentings",
     bio: "Past and upcoming reservations",
-    pathTo: "/rental/bookings-history",
+    pathTo: "/rental/renting-history",
   },
   {
     title: "Transaction history",
