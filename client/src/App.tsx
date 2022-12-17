@@ -14,6 +14,10 @@ import Events from "./pages/Events";
 import Footer from "./components/common/Footer";
 import { Link, Routes, Route } from "react-router-dom";
 
+//TODO
+//TODO need to add in interfaces to maps and where I can
+//TODO
+
 // * use graphQL/Apollo
 //* SQL database PostGres
 //* prismag
@@ -42,7 +46,7 @@ function App() {
         <Route path="/inbox" element={<Inbox />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/bookings" element={<Bookings />} />
-        <Route path="/events" element={<Events />} />
+        <Route path="/events/*" element={<Events />} />
         <Route path="/transaction" element={<Transaction />} />
         <Route path="/transaction-history" element={<TransactionHistory />} />
       </Routes>

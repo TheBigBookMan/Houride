@@ -3,6 +3,7 @@ import { listItems, ReactIcons } from "./listitems";
 import { Link } from "react-router-dom";
 
 //! fix the listItem map any types, doesnt work for the 'to' prop in link
+//TODO add in interface types
 
 const ProfileSelect = () => {
   return (
