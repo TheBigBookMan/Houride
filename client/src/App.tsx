@@ -10,6 +10,7 @@ import Wishlist from "./pages/Wishlist";
 import Bookings from "./pages/Bookings";
 import Transaction from "./pages/Transaction";
 import TransactionHistory from "./pages/TransactionHistory";
+import Events from "./pages/Events";
 import Footer from "./components/common/Footer";
 import { Link, Routes, Route } from "react-router-dom";
 
@@ -32,7 +33,7 @@ function App() {
     <div>
       <NavBar />
       <Routes>
-        <Route index element={<Transaction />} />
+        <Route index element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/profile/*" element={<Profile />} />
@@ -41,6 +42,7 @@ function App() {
         <Route path="/inbox" element={<Inbox />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/bookings" element={<Bookings />} />
+        <Route path="/events" element={<Events />} />
         <Route path="/transaction" element={<Transaction />} />
         <Route path="/transaction-history" element={<TransactionHistory />} />
       </Routes>
