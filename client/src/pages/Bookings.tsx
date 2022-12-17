@@ -4,12 +4,15 @@ import { useState } from "react";
 
 //TODO this is a transaction page for customers with upcoming bookings and previous transactions.bookings
 
+//TODO could have a calendar with an easier weay to see whats happening, on top of the transaction list
+
 const Bookings = () => {
   const [isFuture, setIsFuture] = useState<boolean>(true);
   return (
     <div className="h-full w-full flex flex-col gap-2">
       <h1 className="font-bold text-2xl text-center mt-2">Bookings</h1>
       <div className="flex flex-col items-center justify-between">
+        <div>Booking Calendar</div>
         <div className="flex gap-2">
           <button
             onClick={(): void => setIsFuture(true)}
