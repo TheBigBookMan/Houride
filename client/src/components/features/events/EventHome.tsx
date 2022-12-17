@@ -16,6 +16,7 @@ const EventHome = () => {
               <Icon className="text-3xl" />
               <div className="flex flex-col">
                 <p>{item.name}</p>
+                <p className="text-sm text-zinc-400">{item.bio}</p>
               </div>
             </div>
             <p className="text-2xl">{">"}</p>

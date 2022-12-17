@@ -49,8 +49,8 @@ const Search = () => {
             className="border-2 rounded-xl pl-1"
           >
             {eventData.map((event) => (
-              <option key={event} value={event}>
-                {event}
+              <option key={event.name} value={event.name}>
+                {event.name}
               </option>
             ))}
           </select>

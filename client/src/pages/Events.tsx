@@ -10,7 +10,7 @@ const Events = () => {
       <h1 className="font-bold text-2xl text-center mt-2">Events</h1>
       <Routes>
         <Route index element={<EventHome />} />
-        <Route path="/*" element={<EventProfile />} />
+        <Route path="/:eventname" element={<EventProfile />} />
       </Routes>
     </div>
   );
