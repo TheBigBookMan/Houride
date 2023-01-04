@@ -19,7 +19,7 @@ const typeDefs = gql`
   }
 
   type User {
-    _id: ID
+    _id: String
     username: String
     email: String
     password: String
@@ -27,7 +27,7 @@ const typeDefs = gql`
   }
 
   type Query {
-    singleUser(_id: ID!): User
+    singleUser(_id: String!): User
     allUsers: [User]
   }
 

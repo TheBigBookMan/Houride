@@ -12,11 +12,59 @@ datasource db {
 
 //!!!
 //!!! need to run this after every change --- 'npx prisma migrate dev'
+//!!! Then need to run --- 'npx prisma generate' so it syncs with client
 //!!!
 
+//TODO make all IDs as the uuid as its easier to track
+
+// ? Schema-
+//? username, email, password
+//? created at (date joined)
+//? bio, location, lanaguages spoken
+//? identity verification
+//? reviews recieved and given
+//? rating given and recieved
+//? have a favourites section
+//? have like a calendar which takes in all thed ates and times and then tells the users they cant book double time because already booked
+//? have this as a general user model and then can have seperate models for the hiring out and looking to hire
+
 model User {
-  id Int @id @default(autoincrement())
+  id String @id @default(uuid())
   email String @unique
   username String?
   password String
+  dateJoined DateTime 	@default(now())
 }
+
+//* model badge
+//? badges for the users to confirm they have verified themselves, police pass and other things maybe like they are willing to do something
+
+//* model car
+//? the car that the customer rents out
+//? car type
+//? car images--- maybe from aws bucket?
+//? events they will do, how many seats, the user driving and the price
+//? gogle maps radius of where they will drive
+
+//* model customer
+//? this can be info on a customer
+//? reviews given and reviews recieved from drivers
+//? past trips
+
+//*  model event
+//? reference to the user and car listed
+
+//* model review
+//? this can be a review for customers or drier
+//? who is reviewing
+//? who is being reviewed
+//? rating with review
+//? comment review
+//? date revewed
+
+//* model transaction
+//? this can be the table for trips
+//? event
+//? who was the customer
+//? who was the driver
+//? transaction info- payment, km drien, time took
