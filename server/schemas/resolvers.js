@@ -1,7 +1,9 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { GraphQLScalarType, Kind } = require("graphql");
-// TODO import models
 const { signToken, setCookie } = require("../utils/auth");
+const { PrismaClient } = require("@prisma/client");
+
+const prisma = new PrismaClient();
 
 const resolvers = {
   DateTime: new GraphQLScalarType({
@@ -30,6 +32,29 @@ const resolvers = {
       );
     },
   }),
+
+  Query: {},
+
+  Mutation: {
+    signUp: async (parent, { username, email, password }, { res }) => {
+      //TODO add bcrypt hashing
+      const findUser = await prisma.user.findUnique({
+        where: {
+          email,
+        },
+      });
+
+      if (findUser) {
+        return "User already exists.";
+      }
+
+      const user = await prisma.user.create({
+        data: { username, email, password },
+      });
+
+      return { user };
+    },
+  },
 };
 
 module.exports = resolvers;
