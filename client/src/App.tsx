@@ -13,6 +13,12 @@ import TransactionHistory from "./pages/TransactionHistory";
 import Events from "./pages/Events";
 import Footer from "./components/common/Footer";
 import { Link, Routes, Route } from "react-router-dom";
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from "@apollo/client";
 
 //TODO
 //TODO need to add in interfaces to maps and where I can
@@ -32,26 +38,33 @@ import { Link, Routes, Route } from "react-router-dom";
 
 //TODO car page with all the information about the car rental etc with contact info and a way for the user to message the car rental person
 
+const client = new ApolloClient({
+  uri: "http://localhost:3001/graphql/",
+  cache: new InMemoryCache(),
+});
+
 function App() {
   return (
-    <div>
-      <NavBar />
-      <Routes>
-        <Route index element={<Home />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/profile/*" element={<Profile />} />
-        <Route path="/rental/*" element={<CarRenting />} />
-        <Route path="/listings" element={<CarListings />} />
-        <Route path="/inbox" element={<Inbox />} />
-        <Route path="/wishlist" element={<Wishlist />} />
-        <Route path="/bookings" element={<Bookings />} />
-        <Route path="/events/*" element={<Events />} />
-        <Route path="/transaction" element={<Transaction />} />
-        <Route path="/transaction-history" element={<TransactionHistory />} />
-      </Routes>
-      <Footer />
-    </div>
+    <ApolloProvider client={client}>
+      <div>
+        <NavBar />
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/profile/*" element={<Profile />} />
+          <Route path="/rental/*" element={<CarRenting />} />
+          <Route path="/listings" element={<CarListings />} />
+          <Route path="/inbox" element={<Inbox />} />
+          <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/bookings" element={<Bookings />} />
+          <Route path="/events/*" element={<Events />} />
+          <Route path="/transaction" element={<Transaction />} />
+          <Route path="/transaction-history" element={<TransactionHistory />} />
+        </Routes>
+        <Footer />
+      </div>
+    </ApolloProvider>
   );
 }
 
