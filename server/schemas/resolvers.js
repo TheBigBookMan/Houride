@@ -52,8 +52,8 @@ const resolvers = {
       const user = await prisma.user.create({
         data: { username, email, password },
       });
-
-      return { user };
+      const token = signToken(user);
+      return { user, token };
     },
 
     login: async (parent, { email, password }, { res }) => {
@@ -64,7 +64,8 @@ const resolvers = {
       });
       const hashedPassword = user.password;
       if (bcrypt.compareSync(password, hashedPassword) === true) {
-        return { user };
+        const token = signToken(user);
+        return { user, token };
       } else {
         throw Error("Credentials did not work, please try again...");
       }

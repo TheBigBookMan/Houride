@@ -10,7 +10,6 @@ import Filter from "../../common/Filter";
 
 const EventProfile = () => {
   const { eventname } = useParams();
-  console.log(eventname);
 
   return (
     <div className="flex flex-col p-2 gap-4">

@@ -24,11 +24,11 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
-const startApolloServer = async (typeDefs, resolvers) => {
+const startApolloServer = async (typeDefs, resolvers, context) => {
   const server = new ApolloServer({
     typeDefs,
     resolvers,
-    // context,
+    context,
   });
 
   await server.start();
@@ -40,5 +40,4 @@ const startApolloServer = async (typeDefs, resolvers) => {
   });
 };
 
-// startApolloServer(typeDefs, resolvers, authMiddleware);
-startApolloServer(typeDefs, resolvers);
+startApolloServer(typeDefs, resolvers, authMiddleware);

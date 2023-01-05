@@ -23,7 +23,7 @@ const Filter = (setFilterChoice: () => void) => {
   };
 
   return (
-    <form>
+    <form className="p-2">
       <select
         // onSelect={(e) => onSelectChoice(e)}
         className="border-2 rounded-xl p-1"

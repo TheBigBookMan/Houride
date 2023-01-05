@@ -13,6 +13,7 @@ import TransactionHistory from "./pages/TransactionHistory";
 import Events from "./pages/Events";
 import Footer from "./components/common/Footer";
 import { Provider as UserProvider } from "./contexts/UserContext";
+import { setContext } from "@apollo/client/link/context";
 import { Link, Routes, Route } from "react-router-dom";
 import {
   ApolloClient,
@@ -39,8 +40,25 @@ import {
 
 //TODO car page with all the information about the car rental etc with contact info and a way for the user to message the car rental person
 
-const client = new ApolloClient({
+const httpLink = createHttpLink({
   uri: "http://localhost:3001/graphql/",
+});
+
+const authLink = setContext((_, { headers }) => {
+  const user = JSON.parse(localStorage.getItem("user") as string);
+  if (user === null) return;
+
+  const { token } = user;
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : "",
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
 
