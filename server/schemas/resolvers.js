@@ -2,6 +2,7 @@ const { AuthenticationError } = require("apollo-server-express");
 const { GraphQLScalarType, Kind } = require("graphql");
 const { signToken, setCookie } = require("../utils/auth");
 const { PrismaClient } = require("@prisma/client");
+const bcrypt = require("bcryptjs");
 
 const prisma = new PrismaClient();
 
@@ -43,16 +44,37 @@ const resolvers = {
           email,
         },
       });
+      if (findUser) "User already exists.";
 
-      if (findUser) {
-        return "User already exists.";
-      }
+      const saltRounds = await bcrypt.genSalt(10);
+      password = await bcrypt.hash(password, saltRounds);
 
       const user = await prisma.user.create({
         data: { username, email, password },
       });
 
       return { user };
+    },
+
+    login: async (parent, { email, password }, { res }) => {
+      const user = await prisma.user.findUnique({
+        where: {
+          email,
+        },
+      });
+      const hashedPassword = user.password;
+      if (bcrypt.compareSync(password, hashedPassword) === true) {
+        return { user };
+      } else {
+        throw Error("Credentials did not work, please try again...");
+      }
+    },
+
+    logout: async (parent, args, { res, user }) => {
+      if (!user) {
+        return false;
+      }
+      return true;
     },
   },
 };
