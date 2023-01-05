@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
+import UseUserContext from "../../contexts/UserContext";
 
 //! GET RID OF ANY
 
 const NavLinks = ({ setNavOpen }: any) => {
+  const { logoutUser } = UseUserContext();
+
   return (
     <>
       <Link
@@ -48,7 +51,10 @@ const NavLinks = ({ setNavOpen }: any) => {
         Car Renting
       </Link>
       <Link
-        onClick={() => setNavOpen(false)}
+        onClick={() => {
+          setNavOpen(false);
+          logoutUser();
+        }}
         className="hover:text-zinc-400"
         to="/"
       >

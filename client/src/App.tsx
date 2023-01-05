@@ -12,6 +12,7 @@ import Transaction from "./pages/Transaction";
 import TransactionHistory from "./pages/TransactionHistory";
 import Events from "./pages/Events";
 import Footer from "./components/common/Footer";
+import { Provider as UserProvider } from "./contexts/UserContext";
 import { Link, Routes, Route } from "react-router-dom";
 import {
   ApolloClient,
@@ -46,24 +47,29 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div>
-        <NavBar />
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/profile/*" element={<Profile />} />
-          <Route path="/rental/*" element={<CarRenting />} />
-          <Route path="/listings" element={<CarListings />} />
-          <Route path="/inbox" element={<Inbox />} />
-          <Route path="/wishlist" element={<Wishlist />} />
-          <Route path="/bookings" element={<Bookings />} />
-          <Route path="/events/*" element={<Events />} />
-          <Route path="/transaction" element={<Transaction />} />
-          <Route path="/transaction-history" element={<TransactionHistory />} />
-        </Routes>
-        <Footer />
-      </div>
+      <UserProvider>
+        <div>
+          <NavBar />
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/profile/*" element={<Profile />} />
+            <Route path="/rental/*" element={<CarRenting />} />
+            <Route path="/listings" element={<CarListings />} />
+            <Route path="/inbox" element={<Inbox />} />
+            <Route path="/wishlist" element={<Wishlist />} />
+            <Route path="/bookings" element={<Bookings />} />
+            <Route path="/events/*" element={<Events />} />
+            <Route path="/transaction" element={<Transaction />} />
+            <Route
+              path="/transaction-history"
+              element={<TransactionHistory />}
+            />
+          </Routes>
+          <Footer />
+        </div>
+      </UserProvider>
     </ApolloProvider>
   );
 }

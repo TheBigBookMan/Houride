@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import NavLinks from "./NavLinks";
+import UseUserContext from "../../contexts/UserContext";
 
 // TODO import react router paths
 
@@ -14,15 +15,13 @@ import NavLinks from "./NavLinks";
 
 const NavBar = () => {
   const [navOpen, setNavOpen] = useState<boolean>(false);
+  const { isLoggedIn } = UseUserContext();
 
   //! Logo
   //! hamburger menu with the log in/signup
   //! profile photo
 
   //TODO need the Houride logo while logged in as its also home button, will be fine once hamburger in
-
-  //? temporary boolean for is logged in, will change to state when user authentication
-  let isLoggedIn = true;
 
   return (
     <div className="relative flex items-center border-b border-b-2 p-2 justify-between sticky top-0 z-50 bg-zinc-100">

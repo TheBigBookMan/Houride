@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import UseUserContext from "../../../contexts/UserContext";
 
 //TODO add in mutations for the signup from graphql
 //TODO add in JWT authentication
@@ -14,6 +15,7 @@ const LoginForm = () => {
     email: "",
     password: "",
   });
+  const { loginUser } = UseUserContext();
 
   const inputChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     setFormDetails((prevState) => ({
@@ -28,8 +30,10 @@ const LoginForm = () => {
 
       if (formDetails.email === "" || formDetails.password === "") {
         isValid = "Need all areas to be filled out.";
+      } else {
+        console.log(formDetails);
+        loginUser(formDetails);
       }
-      console.log(formDetails);
     } catch (err) {
       console.log(err);
     }
