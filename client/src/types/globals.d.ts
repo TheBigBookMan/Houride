@@ -1,6 +1,16 @@
 export {};
 
 declare global {
+  interface Prototypes {
+    children: React.ReactNode;
+  }
+
+  interface UserInfo {
+    username: string | null;
+    email: string;
+    password: string;
+  }
+
   interface CarSubmissionTypes {
     type: string;
     seats: number;
